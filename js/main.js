@@ -1,3 +1,20 @@
+let wb = document.querySelector("#cell");
+   function animatewb(){
+   TweenMax.to("#cell", 0.5, {scale:1.2, transformOrigin: "50% 50%",});
+   }
+   function unanimatewb(){
+   TweenMax.to("#cell", 0.5, {scale:1, transformOrigin: "50% 50%"});
+   }
+    wb.addEventListener("mouseover", animatewb);
+    wb.addEventListener("mouseout", unanimatewb);
+
+TweenMax.to("#whiteCircle", 0.001, {scale:1});
+function show26(){
+    TweenMax.to("#whiteCircle", 0.5, {scale:1.1, delay:0});
+}
+document.querySelector("#whiteCircle").addEventListener("mouseover", show26)
+
+
 /* circle no.1 */
 TweenMax.to("#inside_1_", 0.001, {opacity:0});
     function show(){
@@ -144,6 +161,24 @@ function show23(){
     TweenMax.to("#text_8", 1, {scale:1, delay:0})
 }
 
+// Last Red and White circles
+
+TweenMax.to(".st3", 0.001, {rotation:0});
+function show24(){
+    TweenMax.to(".st3", 0.5, {rotation:360 ,delay:0.5});
+}
+
+TweenMax.to("#percentage", 0.001, {scale:0});
+function show25(){
+    TweenMax.to("#percentage", 0.5, {scale:1 ,delay:0.5});
+}
+
+document.querySelector("#first").addEventListener("mouseover", show24)
+
+document.querySelector("#first").addEventListener("mouseover", show25)
+
+
+
 document.querySelector("#darkredCircle").addEventListener("mouseover", show)
 document.querySelector("#darkredCircle").addEventListener("mouseover", show1)
 document.querySelector("#darkredCircle").addEventListener("mouseover", show2)
@@ -176,11 +211,3 @@ document.querySelector("#outer_5_").addEventListener("mouseout", hide4)
 document.querySelector("#outer_6_").addEventListener("mouseout", hide5)
 document.querySelector("#outer_7_").addEventListener("mouseout", hide6)
 document.querySelector("#outer_8_").addEventListener("mouseout", hide7)
-
-let waypoint = new waypoint({
-    element: document.querySelector('darkredCircle'),
-    handler: function(direction){
-        console.log('scrool to waypoint')
-    }
-})
-
